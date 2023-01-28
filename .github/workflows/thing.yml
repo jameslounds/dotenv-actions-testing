@@ -1,0 +1,20 @@
+name: test
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: set up dotenv at root
+        uses: iamsauravsharma/create-dotenv@v1.2.2
+        with:
+          directory: "."
+          file-name: ".env"
+        env:
+          AA: "foobar"
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          BB: "foobar baz"
+          CC: "thing\nthe\nother"
+      - name: "show dotenv"
+        run: "cat .env"
