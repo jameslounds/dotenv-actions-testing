@@ -7,10 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: set up dotenv at root
-        uses: iamsauravsharma/create-dotenv@v1.2.2
+        uses: jameslounds/create-dotenv@master
         with:
           directory: "."
           file-name: ".env"
+          include-vars: '["AA", "BB", "CC", "TURBO_TOKEN"]'
         env:
           AA: "foobar"
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
