@@ -14,6 +14,7 @@ jobs:
           INCLUDE_AA: "foobar"
           INCLUDE_TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           INCLUDE_BB: "foobar baz"
-          INCLUDE_CC: "thing\nthe\nother"
+          INCLUDE_CC: "\"thingtheother\""
       - name: "show dotenv"
         run: "cat .env"
+      - run: "wc -l .env"
